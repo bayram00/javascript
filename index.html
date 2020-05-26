@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="zoom">
+        <img src="mountain1.png" id="layer1" alt="">
+        <img src="mountain2.png" id="layer2" alt="">
+        <img src="text.png" id="text" alt="">
+        <img src="bg.jpg" id="layer3" alt="">
+    </section>
+    <section class="content">
+        <p id="siple">simple background parallax using javascript</p>
+        <h5 id="siple">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam officia quasi totam recusandae necessitatibus
+            soluta expedita at possimus nam magnam vero debitis, omnis provident cumque dolorum non adipisci numquam?
+            Dolorem minima cumque debitis dolor nisi sunt minus optio officiis deleniti fugit commodi, autem deserunt
+            quis non fuga asperiores sapiente animi voluptates distinctio, excepturi nam. Laudantium unde ipsa
+            repellendus obcaecati quibusdam suscipit sit temporibus in quisquam ullam. Quos alias, dolorem architecto
+            odio, adipisci a harum omnis tenetur provident ducimus repellendus exercitationem quis qui eum consequuntur
+            culpa accusantium expedita libero! Reiciendis placeat illum dicta totam laboriosam maxime atque nihil
+            consequuntur obcaecati tenetur.</h5>
+
+    </section>
+
+    <script type="text/javascript">
+        var layer1 = document.getElementById('layer1');
+        scroll = window.pageYOffset;
+        document.addEventListener('scroll', function (e) {
+            var offset = window.pageYOffset;
+            scroll = offset;
+            layer1.style.width = (100 + scroll /100) + '%';
+            layer1.style.right = scroll / 10 + '%';
+        });
+
+
+        var layer2 = document.getElementById('layer2');
+        scroll = window.pageYOffset;
+        document.addEventListener('scroll', function (e) {
+            var offset = window.pageYOffset;
+            scroll = offset;
+            layer2.style.width = (100 + scroll / 100) + '%';
+            layer2.style.left = scroll / 100 + '%';
+        });
+
+        var text = document.getElementById('text');
+        scroll = window.pageYOffset;
+        document.addEventListener('scroll', function (e) {
+            var offset = window.pageYOffset;
+            scroll = offset;
+            layer2.style.width = (100 + scroll / 5) + '%';
+            text.style.top = -scroll /8.5  + '%';
+        });
+        
+        
+    
+    </script>
+
+</body>
+
+</html>
